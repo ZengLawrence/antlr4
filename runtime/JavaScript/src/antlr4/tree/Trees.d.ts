@@ -1,11 +1,15 @@
+import { Parser } from "../Parser";
+import { ParseTree } from "./ParseTree";
+import { Tree } from "./Tree";
+
 export default Trees;
 declare namespace Trees {
-    function toStringTree(tree: any, ruleNames: any, recog: any): any;
-    function getNodeText(t: any, ruleNames: any, recog: any): any;
-    function getChildren(t: any): any[];
-    function getAncestors(t: any): any[];
-    function findAllTokenNodes(t: any, ttype: any): any[];
-    function findAllRuleNodes(t: any, ruleIndex: any): any[];
-    function findAllNodes(t: any, index: any, findTokens: any): any[];
-    function descendants(t: any): any[];
+    function toStringTree(tree: Tree, ruleNames: string[], recog: Parser): string;
+    function getNodeText(t: Tree, ruleNames: string[], recog: Parser): string;
+    function getChildren(t: Tree): Tree[];
+    function getAncestors(t: Tree): Tree[];
+    function findAllTokenNodes(t: ParseTree, ttype: number): ParseTree[];
+    function findAllRuleNodes(t: ParseTree, ruleIndex: number): ParseTree[];
+    function findAllNodes(t: ParseTree, index: number, findTokens: boolean): ParseTree[];
+    function descendants(t: ParseTree): ParseTree[];
 }
