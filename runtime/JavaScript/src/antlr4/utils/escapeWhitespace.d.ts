@@ -1,1 +1,1 @@
-export default function escapeWhitespace(s: any, escapeSpaces: any): any;
+export default function escapeWhitespace(s: string, escapeSpaces: boolean): string;
